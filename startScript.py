@@ -1,12 +1,12 @@
 import subprocess
 import re
-def startProcess():
-    out = subprocess.check_output(['python3', 'CameraScript.py'])
+def startProcess(name,python):
+    out = subprocess.check_output(['{}'.format(python), '{}'.format(name)])
     print(out)
 
-def KillProcess():
+def KillProcess(name):
     try:
-        out = subprocess.check_output('ps -e | grep CameraScript.py',shell=True)
+        out = subprocess.check_output('ps -e | grep {}'.format(name),shell=True)
         out = out.decode('utf-8')
         print(out)
         pid = re.findall(r'\d+', out)
