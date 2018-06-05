@@ -34,13 +34,13 @@ class Camera:
         while True:
             # time.sleep(1)
             print('frame written')
-            # ret, frame = self.vcap.read()
-            # if ret == True:
-            #     self.out.write(frame)
-            #     if self.stop_flag:
-            #         print('record stoped')
-            #         self.stop_flag = False
-            #         break
+            ret, frame = self.vcap.read()
+            if ret == True:
+                self.out.write(frame)
+                if self.stop_flag:
+                    print('record stoped')
+                    self.stop_flag = False
+                    break
 
 
 
